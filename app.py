@@ -10,8 +10,8 @@ db_username = os.getenv('DB_USER')
 db_pass = os.getenv('DB_PASS')
 db_name = os.getenv('DB_NAME')
 cloud_sql_connection_name = os.getenv('CLOUD_SQL_CONNECTION_NAME')
+
 database_uri = 'mysql+pymysql://' + db_name + ':' + db_pass + '@/' + db_name + '?unix_socket=/cloudsql/' + cloud_sql_connection_name
-print(database_uri)
 app.config['SQLALCHEMY_DATABASE_URI'] = database_uri
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://<db-user>:<db-password>@localhost:3306/<db-name>'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
